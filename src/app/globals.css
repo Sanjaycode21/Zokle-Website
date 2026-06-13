@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-electric-violet: #8B5CF6;
+  --color-deep-space: #0A0A0A;
+  --color-soft-snow: #FAFAFA;
+  --color-charcoal-text: #111111;
+  
+  /* Fonts */
+  --font-display: 'Sora', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Border Radius */
+  --radius-default: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+}
+
+:root {
+  --background: #FAFAFA;
+  --foreground: #111111;
+  --glass-bg: rgba(0, 0, 0, 0.03);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --card-border-hover: rgba(139, 92, 246, 0.3);
+  --text-muted: #4B5563;
+  --accent-glow: rgba(139, 92, 246, 0.15);
+}
+
+.dark {
+  --background: #0A0A0A;
+  --foreground: #FAFAFA;
+  --glass-bg: rgba(255, 255, 255, 0.02);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --card-border-hover: rgba(139, 92, 246, 0.5);
+  --text-muted: #cbc3d7;
+  --accent-glow: rgba(139, 92, 246, 0.3);
+}
+
+* {
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: var(--color-electric-violet);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px -10px var(--accent-glow);
+}
+
+/* Glow buttons */
+.glow-button {
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+}
+
+.glow-button:hover {
+  box-shadow: 0 0 20px var(--accent-glow);
+  transform: scale(1.02);
+}
+
+.glow-button:active {
+  transform: scale(0.98);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-electric-violet);
+}
+
+/* Custom Utilities */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 30s linear infinite;
+}
+
+/* Custom Cursor Glow */
+.cursor-glow {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}

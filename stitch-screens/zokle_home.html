@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zokle | High-Performance Digital Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#121414",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#e5e2e1",
+                        "tertiary-fixed-dim": "#ffb869",
+                        "primary": "#d0bcff",
+                        "on-tertiary": "#482900",
+                        "electric-violet": "#8B5CF6",
+                        "glass-border-light": "rgba(255, 255, 255, 0.1)",
+                        "surface-container-lowest": "#0c0f0f",
+                        "background": "#121414",
+                        "surface-container-highest": "#333535",
+                        "tertiary-fixed": "#ffdcbb",
+                        "glass-border-dark": "rgba(0, 0, 0, 0.05)",
+                        "on-tertiary-fixed-variant": "#673d00",
+                        "deep-space": "#0A0A0A",
+                        "surface-container": "#1e2020",
+                        "secondary": "#c9c6c5",
+                        "on-error": "#690005",
+                        "tertiary-container": "#ca801e",
+                        "on-surface-variant": "#cbc3d7",
+                        "primary-fixed-dim": "#d0bcff",
+                        "on-secondary-container": "#bab8b7",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#38393a",
+                        "on-secondary-fixed-variant": "#474646",
+                        "inverse-on-surface": "#2f3131",
+                        "outline": "#958ea0",
+                        "on-surface": "#e2e2e2",
+                        "charcoal-text": "#111111",
+                        "on-tertiary-fixed": "#2c1700",
+                        "outline-variant": "#494454",
+                        "surface-tint": "#d0bcff",
+                        "surface": "#121414",
+                        "soft-snow": "#FAFAFA",
+                        "error-container": "#93000a",
+                        "inverse-primary": "#6d3bd7",
+                        "on-primary-fixed": "#23005c",
+                        "surface-container-low": "#1a1c1c",
+                        "on-primary-fixed-variant": "#5516be",
+                        "primary-container": "#a078ff",
+                        "on-secondary": "#313030",
+                        "tertiary": "#ffb869",
+                        "secondary-fixed-dim": "#c9c6c5",
+                        "inverse-surface": "#e2e2e2",
+                        "on-tertiary-container": "#3f2300",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-background": "#e2e2e2",
+                        "primary-fixed": "#e9ddff",
+                        "surface-container-high": "#282a2b",
+                        "on-primary": "#3c0091",
+                        "secondary-container": "#4a4949",
+                        "surface-variant": "#333535",
+                        "on-primary-container": "#340080"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.75rem",
+                        "lg": "1rem",
+                        "xl": "1.25rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "grid-gutter": "24px",
+                        "section-gap-mobile": "80px",
+                        "section-gap-desktop": "160px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Sora"],
+                        "headline-md": ["Sora"],
+                        "display-lg-mobile": ["Sora"],
+                        "button": ["Sora"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Sora"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "button": ["16px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                        "label-caps": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: 200%;
+            animation: marquee 30s linear infinite;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: #8B5CF6;
+            transform: translateY(-8px);
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.2);
+        }
+        .glow-button {
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+        }
+        .glow-button:hover {
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+            transform: scale(1.02);
+        }
+        .glow-button:active {
+            transform: scale(0.98);
+        }
+        .portfolio-stack-item {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .dot-grid-bg {
+            background-image: radial-gradient(circle, #222 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #8B5CF6; }
+    </style>
+</head>
+<body class="bg-deep-space text-on-surface font-body-md overflow-x-hidden">
+<!-- Global WebGL Background -->
+<!-- STITCH_SHADER_START:ANIMATION_3 class="fixed inset-0 w-full h-full -z-10 pointer-events-none opacity-40" -->
+<div class="fixed inset-0 w-full h-full -z-10 pointer-events-none opacity-40" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_3" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_3');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+
+float grid(vec2 uv, float spacing) {
+    vec2 grid = abs(fract(uv / spacing - 0.5) - 0.5);
+    return 1.0 - smoothstep(0.0, 0.05, min(grid.x, grid.y));
+}
+
+float dotGrid(vec2 uv, float spacing, float radius) {
+    vec2 p = fract(uv / spacing) - 0.5;
+    return 1.0 - smoothstep(radius, radius + 0.01, length(p));
+}
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 aspectUv = (uv - 0.5) * vec2(u_resolution.x / u_resolution.y, 1.0) + 0.5;
+    vec2 mouseUv = u_mouse / u_resolution;
+    vec2 mouseAspectUv = (mouseUv - 0.5) * vec2(u_resolution.x / u_resolution.y, 1.0) + 0.5;
+
+    float spacing = 0.04;
+    float baseRadius = 0.05;
+    
+    // Interactive bulge/displacement
+    float dist = distance(aspectUv, mouseAspectUv);
+    float bulge = smoothstep(0.3, 0.0, dist) * 0.02;
+    vec2 displacedUv = aspectUv - normalize(aspectUv - mouseAspectUv) * bulge;
+    
+    // Base dot grid
+    float dots = dotGrid(displacedUv, spacing, baseRadius);
+    
+    // Violet glow/gradient
+    vec3 accentColor = vec3(139.0/255.0, 92.0/255.0, 246.0/255.0); // #8B5CF6
+    vec3 bgColor = vec3(10.0/255.0, 10.0/255.0, 10.0/255.0); // Dark Mode Default
+    
+    // Radial glow following cursor
+    float glow = smoothstep(0.4, 0.0, dist);
+    vec3 finalColor = mix(bgColor, accentColor, glow * 0.15);
+    
+    // Dots color (subtle violet in dark mode)
+    vec3 dotColor = accentColor * 0.4;
+    finalColor = mix(finalColor, dotColor, dots);
+    
+    // Add violet-to-transparent diagonal gradient overlay
+    float diagonal = smoothstep(0.0, 1.5, uv.x + uv.y);
+    finalColor += accentColor * diagonal * 0.05;
+
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_3 -->
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-[15px] border-b border-glass-border-light">
+<div class="flex justify-between items-center px-grid-gutter py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="font-display-lg text-headline-md font-bold text-on-surface">Zokle</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-on-surface-variant hover:text-electric-violet transition-colors" href="#services">Services</a>
+<a class="font-body-md text-on-surface-variant hover:text-electric-violet transition-colors" href="#portfolio">Portfolio</a>
+<a class="font-body-md text-on-surface-variant hover:text-electric-violet transition-colors" href="#process">Process</a>
+<a class="font-body-md text-on-surface-variant hover:text-electric-violet transition-colors" href="#pricing">Pricing</a>
+<a class="font-body-md text-on-surface-variant hover:text-electric-violet transition-colors" href="#faq">FAQ</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-electric-violet cursor-pointer" onclick="toggleTheme()">dark_mode</button>
+<a class="bg-electric-violet text-white px-6 py-2 rounded-full font-button glow-button" href="#">Book a Call</a>
+</div>
+</div>
+</nav>
+<main class="relative z-10 pt-32">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-grid-gutter grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[819px] mb-section-gap-desktop">
+<div class="scroll-reveal">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6 leading-tight">
+                    We Build <span class="text-electric-violet">Websites</span> That Grow Your Business
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">
+                    High-performance digital experiences that convert visitors into loyal customers. Precision-engineered solutions for the modern enterprise.
+                </p>
+<div class="flex flex-wrap gap-4 mb-12">
+<button class="bg-electric-violet text-white px-8 py-4 rounded-full font-button glow-button text-lg">Book a Free Call</button>
+<button class="border-1.5 border-white/20 bg-white/5 hover:bg-white/10 text-on-surface px-8 py-4 rounded-full font-button transition-all">View Our Work</button>
+</div>
+<!-- Trust Strip -->
+<div class="flex items-center gap-6">
+<div class="flex -space-x-4">
+<img alt="Client" class="w-10 h-10 rounded-full border-2 border-deep-space object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlBx3bX5dsG-3Odhvh1l5qHioQSkF2mo-lhg1yHkRYQsp_kGJjN1GPM2bwtapFPQFFXgX8_TGO5f7aB-uwo9iY4BObFi0T9la79JnXiQM4eRLX6pm9D_sDe5ISIpSgEJAW6WWzfP13R8lqi4W0QxiAB8OLtcCyDKD92hMuEAbJ8bCYqmS6O_d4Hq9FlTb612dtOcRq-5vgPnGehwuj6Gqsm2AUQzuId9GYb-FVodNYtgIJRiVsPfoTp4Z4epMMZRH4XIwFUesKQCM"/>
+<img alt="Client" class="w-10 h-10 rounded-full border-2 border-deep-space object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg4tInVOeZdoIpX6DHMxjMMtcdznQzCxug4_KEA-hOizdwpbCDqD7rTv5334Egt2zSo0db6dIi0FBTM-wuFSjjj0RtChOa6AgHvBZhQ-ABYs7uTFY6HdhYYdc6z6G1ZdOWit80UgVKRTLVOp1Y6RISpMzOTpBrSoZtMKepmEX6MxTxX_RtALkUp5FY03gL_BEN96Gp3osasvNkbDhJRd2NBzISXk3QrIcTL7Bq47nBaXOJRJqwNqS0ngX8cY-9Gu-k0EdEKgIV8lo"/>
+<img alt="Client" class="w-10 h-10 rounded-full border-2 border-deep-space object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLziRxW_LW-dBJkFVhuVyyQNEEgYkXwl08QiaOnyOzEdlxuNVdUjWoumG8SniyIgGPfgYZrdraFFjeBLdJRhH5Gh-vgSYiPRaJpADwjphEbb5nF_vC2-11IYVNXlk8nAvlE4fgx_QEEJaEl2pjj1Y6jRMvInQkVwaMAhLfdXVVIWk-pXObFC1vpG8QO-qbUu2sBv4meJtkHEjneQ_TfXsm4IkoNWxbO0KePiRL5Va6XjIQAFyf01MtuJriwbC-VO27HhKqprkT_zc"/>
+<div class="w-10 h-10 rounded-full border-2 border-deep-space bg-surface-container-high flex items-center justify-center text-xs font-bold">+50</div>
+</div>
+<p class="text-sm text-on-surface-variant font-medium">Trusted by 50+ local businesses worldwide</p>
+</div>
+</div>
+<div class="relative h-[600px] scroll-reveal">
+<!-- STITCH_THREEJS_START:ANIMATION_4 class="w-full h-full" -->
+<div class="w-full h-full" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_4" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_4');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+container.appendChild(renderer.domElement);
+
+// Geometry - Glass-like geometric object (Icosahedron)
+const geometry = new THREE.IcosahedronGeometry(1.5, 0);
+const material = new THREE.MeshPhongMaterial({
+    color: 0x8B5CF6,
+    transparent: true,
+    opacity: 0.6,
+    shininess: 100,
+    reflectivity: 1,
+    flatShading: true
+});
+
+const mesh = new THREE.Mesh(geometry, material);
+scene.add(mesh);
+
+// Wireframe overlay for tech-forward look
+const wireframeGeometry = new THREE.IcosahedronGeometry(1.52, 0);
+const wireframeMaterial = new THREE.MeshBasicMaterial({
+    color: 0x8B5CF6,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.3
+});
+const wireframe = new THREE.Mesh(wireframeGeometry, wireframeMaterial);
+scene.add(wireframe);
+
+// Lights
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+scene.add(ambientLight);
+
+const pointLight = new THREE.PointLight(0x8B5CF6, 1);
+pointLight.position.set(5, 5, 5);
+scene.add(pointLight);
+
+camera.position.z = 5;
+
+// Animation loop
+function animate() {
+    requestAnimationFrame(animate);
+    
+    mesh.rotation.x += 0.005;
+    mesh.rotation.y += 0.005;
+    wireframe.rotation.x += 0.005;
+    wireframe.rotation.y += 0.005;
+    
+    // Subtle float
+    mesh.position.y = Math.sin(Date.now() * 0.001) * 0.1;
+    wireframe.position.y = mesh.position.y;
+    
+    renderer.render(scene, camera);
+}
+
+animate();
+
+// Resize listener
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_4 -->
+<div class="absolute -top-10 -right-10 w-48 h-48 bg-electric-violet/20 blur-[100px] rounded-full"></div>
+</div>
+</section>
+<!-- Tech Loop Marquee -->
+<section class="w-full overflow-hidden py-12 bg-surface-container-lowest/50 border-y border-glass-border-light mb-section-gap-desktop">
+<div class="animate-marquee gap-24 items-center">
+<span class="text-3xl font-bold opacity-30 hover:opacity-100 hover:text-electric-violet transition-all cursor-default flex items-center gap-2"><span class="material-symbols-outlined">api</span> Next.js</span>
+<span class="text-3xl font-bold opacity-30 hover:opacity-100 hover:text-electric-violet transition-all cursor-default flex items-center gap-2"><span class="material-symbols-outlined">deployed_code</span> React</span>
+<span class="text-3xl font-bold opacity-30 hover:opacity-100 hover:text-electric-violet transition-all cursor-default flex items-center gap-2"><span class="material-symbols-outlined">style</span> Tailwind</span>
+<span class="text-3xl font-bold opacity-30 hover:opacity-100 hover:text-electric-violet transition-all cursor-default flex items-center gap-2"><span class="material-symbols-outlined">storage</span> Supabase</span>
+<span class="text-3xl font-bold opacity-30 hover:opacity-100 hover:text-electric-violet transition-all cursor-default flex items-center gap-2"><span class="material-symbols-outlined">cloud</span> Vercel</span>
+<span class="text-3xl font-bold opacity-30 hover:opacity-100 hover:text-electric-violet transition-all cursor-default flex items-center gap-2"><span class="material-symbols-outlined">javascript</span> Typescript</span>
+<!-- Repeated for seamless loop -->
+<span class="text-3xl font-bold opacity-30 hover:opacity-100 hover:text-electric-violet transition-all cursor-default flex items-center gap-2"><span class="material-symbols-outlined">api</span> Next.js</span>
+<span class="text-3xl font-bold opacity-30 hover:opacity-100 hover:text-electric-violet transition-all cursor-default flex items-center gap-2"><span class="material-symbols-outlined">deployed_code</span> React</span>
+<span class="text-3xl font-bold opacity-30 hover:opacity-100 hover:text-electric-violet transition-all cursor-default flex items-center gap-2"><span class="material-symbols-outlined">style</span> Tailwind</span>
+<span class="text-3xl font-bold opacity-30 hover:opacity-100 hover:text-electric-violet transition-all cursor-default flex items-center gap-2"><span class="material-symbols-outlined">storage</span> Supabase</span>
+</div>
+</section>
+<!-- Services Section (Bento Grid) -->
+<section class="max-w-container-max mx-auto px-grid-gutter mb-section-gap-desktop" id="services">
+<div class="mb-16 scroll-reveal">
+<span class="text-electric-violet font-label-caps uppercase tracking-widest block mb-4">Capabilities</span>
+<h2 class="font-display-lg text-headline-xl text-on-surface">What We Do</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[250px]">
+<div class="md:col-span-8 glass-card p-10 rounded-2xl flex flex-col justify-between scroll-reveal">
+<div>
+<span class="material-symbols-outlined text-electric-violet text-4xl mb-4">web</span>
+<h3 class="font-display-lg text-headline-md mb-2">Website Design</h3>
+<p class="text-on-surface-variant">Bespoke digital experiences tailored to your brand identity and business objectives.</p>
+</div>
+</div>
+<div class="md:col-span-4 glass-card p-10 rounded-2xl flex flex-col justify-between scroll-reveal">
+<div>
+<span class="material-symbols-outlined text-electric-violet text-4xl mb-4">shopping_cart</span>
+<h3 class="font-display-lg text-headline-md mb-2">E-commerce</h3>
+<p class="text-on-surface-variant">High-converting stores that scale seamlessly with your growth.</p>
+</div>
+</div>
+<div class="md:col-span-4 glass-card p-10 rounded-2xl flex flex-col justify-between scroll-reveal">
+<div>
+<span class="material-symbols-outlined text-electric-violet text-4xl mb-4">search</span>
+<h3 class="font-display-lg text-headline-md mb-2">SEO</h3>
+<p class="text-on-surface-variant">Data-driven strategies to dominate search results.</p>
+</div>
+</div>
+<div class="md:col-span-4 glass-card p-10 rounded-2xl flex flex-col justify-between scroll-reveal">
+<div>
+<span class="material-symbols-outlined text-electric-violet text-4xl mb-4">speed</span>
+<h3 class="font-display-lg text-headline-md mb-2">Performance</h3>
+<p class="text-on-surface-variant">Lightning-fast load times for better UX.</p>
+</div>
+</div>
+<div class="md:col-span-4 glass-card p-10 rounded-2xl flex flex-col justify-between scroll-reveal">
+<div>
+<span class="material-symbols-outlined text-electric-violet text-4xl mb-4">ads_click</span>
+<h3 class="font-display-lg text-headline-md mb-2">Lead Gen</h3>
+<p class="text-on-surface-variant">Funnel optimization that turns visitors into revenue.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio (Stacked Card Carousel) -->
+<section class="max-w-container-max mx-auto px-grid-gutter mb-section-gap-desktop overflow-hidden" id="portfolio">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 scroll-reveal">
+<div>
+<span class="text-electric-violet font-label-caps uppercase tracking-widest block mb-4">Selected Work</span>
+<h2 class="font-display-lg text-headline-xl text-on-surface">Featured Projects</h2>
+</div>
+<div class="flex gap-4 mt-8 md:mt-0">
+<button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-electric-violet transition-all" onclick="rotateStack('prev')"><span class="material-symbols-outlined">arrow_back</span></button>
+<button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-electric-violet transition-all" onclick="rotateStack('next')"><span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+<div class="relative h-[600px] perspective-[2000px]" id="portfolio-stack">
+<!-- Project 1 -->
+<div class="portfolio-stack-item absolute inset-0 w-full max-w-4xl mx-auto rounded-3xl overflow-hidden glass-card group cursor-pointer" style="transform: translateZ(0px) rotateX(0deg) scale(1);">
+<img class="w-full h-full object-cover" data-alt="A professional dashboard design with dark mode aesthetic and vibrant purple accents, featuring clean data visualizations and modern sans-serif typography. The image is captured in a high-fidelity rendering style to represent premium digital agency work." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyUu3TCvbUP65xdzHoyoC8FIVBoofYgr3NKdkhl2bS7YsRLtst-9EaTGICjNreErCTt_FF8FuDG1M7p_pgrBfuBchNGIT7m5zXTW2d-DGGEyunQ5xj0otlOecusyJ8QX0OHIcOKLyDEs-J6vMsF-XUhp07vFoCWix6JsRwBWyYX70KiUPQQWt2AG86QTnPIAk98vMF28dgbPhccqkW6M4p_CITRYWGTPKXEfMaXRsz1bN6hpPCs-uQUOUOoE0xEnF1G4RbLikgZWs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-12 flex flex-col justify-end">
+<span class="text-electric-violet font-bold mb-2">E-COMMERCE</span>
+<h3 class="text-headline-xl font-display-lg text-white">Vesper Luxe Retail</h3>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="portfolio-stack-item absolute inset-0 w-full max-w-4xl mx-auto rounded-3xl overflow-hidden glass-card group cursor-pointer" style="transform: translateZ(-100px) translateY(-40px) rotateX(5deg) scale(0.95); opacity: 0.8;">
+<img class="w-full h-full object-cover" data-alt="An innovative SaaS platform interface displayed on a sleek laptop screen, set against a dark architectural background. The UI features complex charts and glowing violet interactive elements, embodying a futuristic and high-performance design language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyNVe5raAC2F9iBefyHTqfGaW6s07Yyle7KNPUIgTsXdWNLgA1VPteK_u0qAQAUmKQPEolyShJUgQMwYEaPNONydxpX6ufMDCan6iy-33rYbqn9KPCHrEZRZlhIU1NztfDDWekVmbS16gYk2v796DTQrJhXxAyVvNqpIrPAXjFYpywHl2nsEuWGnEb7MvpYJlVNK--WDvjuep4zN8aaZyzFxYpPQYtkW2yeXIS_1pFCvach-MGgTKfQgLYxfq4P8a__VmmD60INhM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-12 flex flex-col justify-end">
+<span class="text-electric-violet font-bold mb-2">SAAS PLATFORM</span>
+<h3 class="text-headline-xl font-display-lg text-white">Nova Analytics</h3>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="portfolio-stack-item absolute inset-0 w-full max-w-4xl mx-auto rounded-3xl overflow-hidden glass-card group cursor-pointer" style="transform: translateZ(-200px) translateY(-80px) rotateX(10deg) scale(0.9); opacity: 0.6;">
+<img class="w-full h-full object-cover" data-alt="A high-end architectural portfolio website showcasing minimalist structures with dramatic shadows and atmospheric lighting. The digital design is clean, using a grid-based layout and sophisticated typography to emphasize professional excellence and creative vision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbdson-rYBeODg9S5DEhqZdiAJkcBIQWV-0n-0ROU6ID0xJiVh7Jwe-x7-FsZ7DG4XtWUFxN5f4TjbzznnUutfmPp8-5D-F0B7EiQ3I8qGjkdjjWW25ymN6OMrFcdouRtbYmA6gWy7Bh9RgF4UIyJjt1Vf8DWBtc-n2KDp2nBIE6W61JqnKZbN5c4qw_WqP-S9on-_VAExiyiFPdmzJ3TGeQH_jNVvgUwv92HKUKynAWz2P6lHvzvDrdJatHR8edGrAO62tJIIV6o"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-12 flex flex-col justify-end">
+<span class="text-electric-violet font-bold mb-2">REAL ESTATE</span>
+<h3 class="text-headline-xl font-display-lg text-white">Apex Residences</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="max-w-container-max mx-auto px-grid-gutter mb-section-gap-desktop" id="process">
+<div class="text-center mb-16 scroll-reveal">
+<span class="text-electric-violet font-label-caps uppercase tracking-widest block mb-4">Our Method</span>
+<h2 class="font-display-lg text-headline-xl text-on-surface">The Roadmap to Success</h2>
+</div>
+<div class="relative py-12">
+<div class="absolute top-1/2 left-0 w-full h-0.5 bg-white/10 -translate-y-1/2 hidden lg:block"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative">
+<div class="scroll-reveal">
+<div class="w-16 h-16 rounded-2xl bg-electric-violet flex items-center justify-center text-white font-display-lg text-2xl mb-8 relative z-10 shadow-[0_0_20px_rgba(139,92,246,0.4)]">01</div>
+<h3 class="text-headline-md mb-4 font-display-lg">Discovery</h3>
+<p class="text-on-surface-variant">Deep dive into your business goals, target audience, and current challenges.</p>
+</div>
+<div class="scroll-reveal" style="transition-delay: 100ms;">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-high border border-glass-border-light flex items-center justify-center text-on-surface font-display-lg text-2xl mb-8 relative z-10">02</div>
+<h3 class="text-headline-md mb-4 font-display-lg">Design</h3>
+<p class="text-on-surface-variant">Crafting visually stunning prototypes that focus on conversion and branding.</p>
+</div>
+<div class="scroll-reveal" style="transition-delay: 200ms;">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-high border border-glass-border-light flex items-center justify-center text-on-surface font-display-lg text-2xl mb-8 relative z-10">03</div>
+<h3 class="text-headline-md mb-4 font-display-lg">Develop</h3>
+<p class="text-on-surface-variant">Transforming designs into pixel-perfect, high-performance code.</p>
+</div>
+<div class="scroll-reveal" style="transition-delay: 300ms;">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-high border border-glass-border-light flex items-center justify-center text-on-surface font-display-lg text-2xl mb-8 relative z-10">04</div>
+<h3 class="text-headline-md mb-4 font-display-lg">Launch</h3>
+<p class="text-on-surface-variant">Final optimization, deployment, and ongoing strategic support.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="max-w-container-max mx-auto px-grid-gutter mb-section-gap-desktop">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-8 py-20 bg-surface-container-low/50 rounded-[2rem] border border-glass-border-light">
+<div class="text-center scroll-reveal">
+<div class="text-headline-xl font-display-lg text-electric-violet mb-2" data-count="150">0+</div>
+<p class="text-on-surface-variant font-label-caps uppercase">Projects Completed</p>
+</div>
+<div class="text-center scroll-reveal" style="transition-delay: 100ms;">
+<div class="text-headline-xl font-display-lg text-electric-violet mb-2" data-count="98">0%</div>
+<p class="text-on-surface-variant font-label-caps uppercase">Client Satisfaction</p>
+</div>
+<div class="text-center scroll-reveal" style="transition-delay: 200ms;">
+<div class="text-headline-xl font-display-lg text-electric-violet mb-2" data-count="12">0+</div>
+<p class="text-on-surface-variant font-label-caps uppercase">Industry Awards</p>
+</div>
+<div class="text-center scroll-reveal" style="transition-delay: 300ms;">
+<div class="text-headline-xl font-display-lg text-electric-violet mb-2" data-count="24">0/7</div>
+<p class="text-on-surface-variant font-label-caps uppercase">Dedicated Support</p>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="max-w-container-max mx-auto px-grid-gutter mb-section-gap-desktop" id="pricing">
+<div class="text-center mb-16 scroll-reveal">
+<span class="text-electric-violet font-label-caps uppercase tracking-widest block mb-4">Investment</span>
+<h2 class="font-display-lg text-headline-xl text-on-surface">Simple, Transparent Pricing</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+<!-- Tier 1 -->
+<div class="glass-card p-10 rounded-3xl flex flex-col scroll-reveal">
+<h3 class="font-display-lg text-headline-md mb-4">Starter</h3>
+<div class="mb-8"><span class="text-4xl font-bold">$2,999</span><span class="text-on-surface-variant">/project</span></div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-electric-violet">check_circle</span> 5-Page Responsive Site</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-electric-violet">check_circle</span> SEO Optimization</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-electric-violet">check_circle</span> CMS Integration</li>
+</ul>
+<button class="w-full py-4 rounded-xl border border-white/10 hover:bg-white/5 transition-all font-button">Get Started</button>
+</div>
+<!-- Tier 2 (Highlighted) -->
+<div class="glass-card p-10 rounded-3xl flex flex-col border-electric-violet ring-1 ring-electric-violet relative scroll-reveal" style="transition-delay: 100ms;">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-electric-violet text-white px-4 py-1 rounded-full text-xs font-bold">MOST POPULAR</div>
+<h3 class="font-display-lg text-headline-md mb-4">Growth</h3>
+<div class="mb-8"><span class="text-4xl font-bold">$5,499</span><span class="text-on-surface-variant">/project</span></div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-electric-violet">check_circle</span> Everything in Starter</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-electric-violet">check_circle</span> E-commerce Setup</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-electric-violet">check_circle</span> Custom Animations</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-electric-violet">check_circle</span> Priority Support</li>
+</ul>
+<button class="w-full py-4 rounded-xl bg-electric-violet text-white glow-button font-button">Select Plan</button>
+</div>
+<!-- Tier 3 -->
+<div class="glass-card p-10 rounded-3xl flex flex-col scroll-reveal" style="transition-delay: 200ms;">
+<h3 class="font-display-lg text-headline-md mb-4">Premium</h3>
+<div class="mb-8"><span class="text-4xl font-bold">Custom</span></div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-electric-violet">check_circle</span> Full Branding Suite</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-electric-violet">check_circle</span> Complex App Dev</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-electric-violet">check_circle</span> AI Integrations</li>
+</ul>
+<button class="w-full py-4 rounded-xl border border-white/10 hover:bg-white/5 transition-all font-button">Contact Us</button>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="max-w-3xl mx-auto px-grid-gutter mb-section-gap-desktop" id="faq">
+<div class="text-center mb-16 scroll-reveal">
+<h2 class="font-display-lg text-headline-xl text-on-surface">Common Questions</h2>
+</div>
+<div class="space-y-4">
+<details class="group glass-card rounded-2xl scroll-reveal">
+<summary class="list-none p-6 flex justify-between items-center cursor-pointer font-bold text-lg">
+                        How long does a typical project take?
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant">
+                        Standard websites typically take 4-6 weeks from discovery to launch, while complex E-commerce sites may take 8-12 weeks.
+                    </div>
+</details>
+<details class="group glass-card rounded-2xl scroll-reveal">
+<summary class="list-none p-6 flex justify-between items-center cursor-pointer font-bold text-lg">
+                        Do you offer monthly maintenance?
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant">
+                        Yes, we offer ongoing maintenance packages that include security updates, speed optimization, and content updates.
+                    </div>
+</details>
+<details class="group glass-card rounded-2xl scroll-reveal">
+<summary class="list-none p-6 flex justify-between items-center cursor-pointer font-bold text-lg">
+                        Can you help with rebranding?
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant">
+                        Absolutely. We often handle full branding projects including logo design, color palettes, and typography before starting the web build.
+                    </div>
+</details>
+</div>
+</section>
+<!-- Final CTA Banner -->
+<section class="max-w-container-max mx-auto px-grid-gutter mb-section-gap-desktop">
+<div class="relative rounded-[3rem] overflow-hidden p-20 text-center glass-card border-none bg-gradient-to-br from-electric-violet/40 to-transparent scroll-reveal">
+<div class="relative z-10">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-8">Ready to Grow Your Business Online?</h2>
+<p class="text-xl text-white/80 mb-12 max-w-2xl mx-auto">Join dozens of successful brands that have scaled their digital presence with Zokle.</p>
+<button class="bg-white text-electric-violet px-12 py-5 rounded-full font-button text-xl glow-button">Start Your Project Today</button>
+</div>
+<div class="absolute inset-0 opacity-20 dot-grid-bg"></div>
+<div class="absolute -bottom-20 -left-20 w-80 h-80 bg-electric-violet blur-[120px] rounded-full"></div>
+<div class="absolute -top-20 -right-20 w-80 h-80 bg-electric-violet blur-[120px] rounded-full"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-glass-border-light relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-grid-gutter px-grid-gutter py-section-gap-mobile max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-display-lg text-headline-md font-bold text-on-surface mb-6">Zokle</div>
+<p class="text-on-surface-variant mb-6">Building future-proof digital experiences for innovative brands.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:text-electric-violet transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:text-electric-violet transition-colors" href="#"><span class="material-symbols-outlined">campaign</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6">Services</h4>
+<ul class="space-y-4 text-on-surface-variant">
+<li><a class="hover:text-electric-violet transition-colors" href="#">Web Design</a></li>
+<li><a class="hover:text-electric-violet transition-colors" href="#">Development</a></li>
+<li><a class="hover:text-electric-violet transition-colors" href="#">SEO &amp; Marketing</a></li>
+<li><a class="hover:text-electric-violet transition-colors" href="#">Consulting</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Company</h4>
+<ul class="space-y-4 text-on-surface-variant">
+<li><a class="hover:text-electric-violet transition-colors" href="#">Portfolio</a></li>
+<li><a class="hover:text-electric-violet transition-colors" href="#">Our Process</a></li>
+<li><a class="hover:text-electric-violet transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-electric-violet transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Legal</h4>
+<ul class="space-y-4 text-on-surface-variant">
+<li><a class="hover:text-electric-violet transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-electric-violet transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-electric-violet transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-glass-border-light py-8 text-center text-on-surface-variant text-sm">
+            © 2024 Zokle Agency. All rights reserved.
+        </div>
+</footer>
+<script>
+        // Theme Toggle Logic
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            const icon = document.querySelector('nav .material-symbols-outlined');
+            icon.textContent = document.documentElement.classList.contains('dark') ? 'dark_mode' : 'light_mode';
+        }
+
+        // Scroll Reveal Logic
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Trigger counters if they exist
+                    const counters = entry.target.querySelectorAll('[data-count]');
+                    counters.forEach(counter => animateCounter(counter));
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+        // Stats Counter Animation
+        function animateCounter(el) {
+            const target = parseInt(el.getAttribute('data-count'));
+            let current = 0;
+            const duration = 2000;
+            const step = target / (duration / 16);
+            
+            const interval = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    el.textContent = target + (el.textContent.includes('+') ? '+' : (el.textContent.includes('%') ? '%' : '/7'));
+                    clearInterval(interval);
+                } else {
+                    el.textContent = Math.floor(current) + (el.textContent.includes('+') ? '+' : (el.textContent.includes('%') ? '%' : '/7'));
+                }
+            }, 16);
+        }
+
+        // Portfolio Stack Rotation Logic
+        let currentStackIndex = 0;
+        function rotateStack(direction) {
+            const stack = document.getElementById('portfolio-stack');
+            const items = stack.children;
+            
+            if (direction === 'next') {
+                const firstItem = items[0];
+                stack.appendChild(firstItem);
+            } else {
+                const lastItem = items[items.length - 1];
+                stack.insertBefore(lastItem, items[0]);
+            }
+            
+            // Re-apply styles
+            Array.from(items).forEach((item, index) => {
+                item.style.zIndex = items.length - index;
+                if (index === 0) {
+                    item.style.transform = `translateZ(0px) rotateX(0deg) scale(1)`;
+                    item.style.opacity = '1';
+                } else if (index === 1) {
+                    item.style.transform = `translateZ(-100px) translateY(-40px) rotateX(5deg) scale(0.95)`;
+                    item.style.opacity = '0.8';
+                } else {
+                    item.style.transform = `translateZ(-200px) translateY(-80px) rotateX(10deg) scale(0.9)`;
+                    item.style.opacity = '0.6';
+                }
+            });
+        }
+    </script>
+</body></html>
