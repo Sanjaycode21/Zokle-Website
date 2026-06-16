@@ -42,13 +42,13 @@ export default function Home() {
     "description": "Premium web design and development agency specializing in Next.js, custom e-commerce stores, and high-performance SEO results.",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "San Francisco",
-      "addressRegion": "CA",
-      "postalCode": "94107",
-      "addressCountry": "US"
+      "addressLocality": "Chennai",
+      "addressRegion": "TN",
+      "postalCode": "600001",
+      "addressCountry": "IN"
     },
-    "telephone": "+1-555-123-4567",
-    "priceRange": "$$$",
+    "telephone": "+91-8807892068",
+    "priceRange": "₹",
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -99,7 +99,7 @@ export default function Home() {
             variants={childVariants}
             className="font-body text-base sm:text-lg md:text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed"
           >
-            High-performance, visual-first digital experiences engineered to turn visitors into paying customers. Precision code for modern companies.
+            We design and build fast, modern websites for local businesses — gyms, salons, restaurants, and more. Every project is crafted to turn visitors into paying customers.
           </motion.p>
 
           <motion.div variants={childVariants} className="flex flex-wrap gap-4 mb-12 w-full sm:w-auto">
@@ -138,12 +138,9 @@ export default function Home() {
                 className="w-9 h-9 rounded-full border-2 border-background object-cover"
                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100&h=100"
               />
-              <div className="w-9 h-9 rounded-full border-2 border-background bg-glass-bg text-foreground flex items-center justify-center text-xs font-bold">
-                +50
-              </div>
             </div>
             <p className="text-xs md:text-sm text-muted-foreground font-semibold">
-              Trusted by 50+ local businesses worldwide
+              Built for businesses that want to grow online
             </p>
           </motion.div>
         </motion.div>

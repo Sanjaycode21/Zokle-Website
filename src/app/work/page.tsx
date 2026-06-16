@@ -10,9 +10,9 @@ export default function WorkPage() {
 
   const filterTabs = [
     { id: 'all', label: 'All Projects' },
-    { id: 'ecommerce', label: 'E-commerce', category: 'E-COMMERCE' },
-    { id: 'saas', label: 'SaaS Platform', category: 'SAAS PLATFORM' },
-    { id: 'realestate', label: 'Real Estate', category: 'REAL ESTATE' },
+    { id: 'gym', label: 'Gym & Fitness', category: 'Gym & Fitness Website' },
+    { id: 'salon', label: 'Salon & Beauty', category: 'Salon & Beauty Website' },
+    { id: 'restaurant', label: 'Restaurant', category: 'Restaurant Website' },
   ];
 
   const filteredProjects = portfolioData.filter((project) => {

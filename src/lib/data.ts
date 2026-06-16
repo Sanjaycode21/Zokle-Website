@@ -84,25 +84,25 @@ export const servicesData: ServiceItem[] = [
 
 export const portfolioData: ProjectItem[] = [
   {
-    id: 'vesper-luxe',
-    title: 'Vesper Luxe Retail',
-    category: 'E-COMMERCE',
-    imageSrc: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCyUu3TCvbUP65xdzHoyoC8FIVBoofYgr3NKdkhl2bS7YsRLtst-9EaTGICjNreErCTt_FF8FuDG1M7p_pgrBfuBchNGIT7m5zXTW2d-DGGEyunQ5xj0otlOecusyJ8QX0OHIcOKLyDEs-J6vMsF-XUhp07vFoCWix6JsRwBWyYX70KiUPQQWt2AG86QTnPIAk98vMF28dgbPhccqkW6M4p_CITRYWGTPKXEfMaXRsz1bN6hpPCs-uQUOUOoE0xEnF1G4RbLikgZWs',
-    dataAlt: 'A professional dashboard design with dark mode aesthetic and vibrant purple accents.',
+    id: 'pulsefit',
+    title: 'PulseFit Gym',
+    category: 'Gym & Fitness Website',
+    imageSrc: '/projects/pulsefit.png',
+    dataAlt: 'A bold, high-energy website for a fitness studio featuring class schedules, trainer profiles, and an online membership signup flow.',
   },
   {
-    id: 'nova-analytics',
-    title: 'Nova Analytics',
-    category: 'SAAS PLATFORM',
-    imageSrc: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAyNVe5raAC2F9iBefyHTqfGaW6s07Yyle7KNPUIgTsXdWNLgA1VPteK_u0qAQAUmKQPEolyShJUgQMwYEaPNONydxpX6ufMDCan6iy-33rYbqn9KPCHrEZRZlhIU1NztfDDWekVmbS16gYk2v796DTQrJhXxAyVvNqpIrPAXjFYpywHl2nsEuWGnEb7MvpYJlVNK--WDvjuep4zN8aaZyzFxYpPQYtkW2yeXIS_1pFCvach-MGgTKfQgLYxfq4P8a__VmmD60INhM',
-    dataAlt: 'An innovative SaaS platform interface displayed on a sleek laptop screen.',
+    id: 'lumiere',
+    title: 'Lumière Salon',
+    category: 'Salon & Beauty Website',
+    imageSrc: '/projects/lumiere.png',
+    dataAlt: 'An elegant, conversion-focused booking site for a beauty salon with service menus, gallery showcase, and integrated appointment scheduling.',
   },
   {
-    id: 'apex-residences',
-    title: 'Apex Residences',
-    category: 'REAL ESTATE',
-    imageSrc: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCbdson-rYBeODg9S5DEhqZdiAJkcBIQWV-0n-0ROU6ID0xJiVh7Jwe-x7-FsZ7DG4XtWUFxN5f4TjbzznnUutfmPp8-5D-F0B7EiQ3I8qGjkdjjWW25ymN6OMrFcdouRtbYmA6gWy7Bh9RgF4UIyJjt1Vf8DWBtc-n2KDp2nBIE6W61JqnKZbN5c4qw_WqP-S9on-_VAExiyiFPdmzJ3TGeQH_jNVvgUwv92HKUKynAWz2P6lHvzvDrdJatHR8edGrAO62tJIIV6o',
-    dataAlt: 'A high-end architectural portfolio website showcasing minimalist structures.',
+    id: 'copper-plate',
+    title: 'The Copper Plate',
+    category: 'Restaurant Website',
+    imageSrc: '/projects/copperplate.png',
+    dataAlt: 'A warm, visually rich restaurant website with digital menu, online table reservations, and location/hours info designed to drive foot traffic.',
   },
 ];
 
@@ -134,17 +134,17 @@ export const processRoadmap: RoadmapStep[] = [
 ];
 
 export const statsData: StatItem[] = [
-  { id: 'stat-projects', value: 150, suffix: '+', label: 'Projects Completed' },
-  { id: 'stat-satisfaction', value: 98, suffix: '%', label: 'Client Satisfaction' },
-  { id: 'stat-awards', value: 12, suffix: '+', label: 'Industry Awards' },
-  { id: 'stat-support', value: 24, suffix: '/7', label: 'Dedicated Support' },
+  { id: 'stat-projects', value: 3, suffix: '+', label: 'Projects Completed' },
+  { id: 'stat-satisfaction', value: 100, suffix: '%', label: 'Commitment to Quality' },
+  { id: 'stat-experience', value: 1, suffix: '+', label: 'Years Building' },
+  { id: 'stat-support', value: 24, suffix: '/7', label: 'Support Available' },
 ];
 
 export const pricingPlans: PricingPlan[] = [
   {
     id: 'plan-starter',
     name: 'Starter',
-    price: '$2,999',
+    price: '₹2,999',
     frequency: 'project',
     features: [
       '5-Page Responsive Design',
@@ -158,7 +158,7 @@ export const pricingPlans: PricingPlan[] = [
   {
     id: 'plan-growth',
     name: 'Growth',
-    price: '$5,499',
+    price: '₹5,999',
     frequency: 'project',
     features: [
       'Everything in Starter Plan',
@@ -190,21 +190,21 @@ export const faqData: FAQItem[] = [
   {
     id: 'faq-1',
     question: 'How long does a typical project take?',
-    answer: 'Standard marketing websites typically scale between 4-6 weeks from initial research to deployment. More advanced E-commerce setups or SaaS products with complex logic take approximately 8-12 weeks.',
+    answer: 'Most projects take 2-4 weeks from discovery to launch, depending on scope and complexity.',
   },
   {
     id: 'faq-2',
     question: 'Do you offer monthly maintenance packages?',
-    answer: 'Yes, we offer ongoing maintenance retainers that cover security updates, speed and performance tuning, core libraries upgrades, SEO strategy audits, and design refreshes.',
+    answer: 'Yes, we offer ongoing maintenance and support packages to keep your site updated, secure, and performing well.',
   },
   {
     id: 'faq-3',
     question: 'Can you assist us with complete rebranding?',
-    answer: 'Absolutely. We regularly conduct full branding workshops, logo iterations, style and typography systems guidelines, and asset creation sessions prior to starting the development phase.',
+    answer: 'Yes, we can help with visual branding, messaging, and a full website redesign as part of a rebrand.',
   },
   {
     id: 'faq-4',
     question: 'What framework do you build on?',
-    answer: 'We default to Next.js latest (App Router) with React, TypeScript, and Tailwind CSS. This combination delivers the highest page speeds, server-side rendering benefits, SEO scores, and overall security standard.',
+    answer: 'We build primarily with Next.js, React, and Tailwind CSS for fast, modern, scalable websites.',
   },
 ];

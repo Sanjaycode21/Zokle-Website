@@ -27,7 +27,7 @@ export default function Footer() {
             Zokle<span className="text-electric-violet">.</span>
           </Link>
           <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-sm">
-            We build high-performance, conversion-oriented digital experiences that help businesses establish dominance in their markets.
+            We design and build high-performance websites that help local businesses grow online.
           </p>
           {/* Social Links */}
           <div className="flex gap-3">
@@ -81,7 +81,6 @@ export default function Footer() {
             <li><Link href="/work" className="hover:text-electric-violet transition-colors">Portfolio</Link></li>
             <li><Link href="/about" className="hover:text-electric-violet transition-colors">About Us</Link></li>
             <li><Link href="/pricing" className="hover:text-electric-violet transition-colors">Pricing</Link></li>
-            <li><Link href="/contact" className="hover:text-electric-violet transition-colors">Careers</Link></li>
           </ul>
         </div>
 
@@ -89,7 +88,7 @@ export default function Footer() {
         <div className="md:col-span-4">
           <h4 className="font-display text-sm font-semibold uppercase tracking-wider mb-6 text-foreground">Newsletter</h4>
           <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-            Subscribe to our newsletter for insights on high-performing design strategies.
+            Subscribe to our newsletter for high-performing design strategies.
           </p>
           <form onSubmit={handleSubscribe} className="relative w-full max-w-md">
             <input

@@ -52,8 +52,8 @@ export default function ContactPage() {
               </div>
               <div>
                 <h4 className="text-xs font-bold font-display uppercase tracking-wider text-foreground mb-1">Phone</h4>
-                <a href="tel:+15551234567" className="text-sm text-muted-foreground hover:text-electric-violet transition-colors">
-                  +1 (555) 123-4567
+                <a href="tel:+918807892068" className="text-sm text-muted-foreground hover:text-electric-violet transition-colors">
+                  +91 8807892068
                 </a>
               </div>
             </div>
@@ -66,7 +66,7 @@ export default function ContactPage() {
               <div>
                 <h4 className="text-xs font-bold font-display uppercase tracking-wider text-foreground mb-1">Location</h4>
                 <p className="text-sm text-muted-foreground">
-                  San Francisco, CA
+                  Chennai, India
                 </p>
               </div>
             </div>

@@ -76,10 +76,10 @@ export default function ContactForm() {
   ];
 
   const budgetRanges = [
-    { value: 'under-2500', label: 'Under $2,500' },
-    { value: '2500-5000', label: '$2,500 - $5,000' },
-    { value: '5000-10000', label: '$5,000 - $10,000' },
-    { value: 'above-10000', label: '$10,000+' },
+    { value: 'under-2000', label: 'Under ₹1,999' },
+    { value: '2000-5000', label: '₹2,000 - ₹5,000' },
+    { value: '5000-15000', label: '₹5,000 - ₹15,000' },
+    { value: 'above-15000', label: 'Above ₹15,000' },
   ];
 
   return (
@@ -113,7 +113,7 @@ export default function ContactForm() {
                 id="name"
                 type="text"
                 {...register('name')}
-                placeholder="John Doe"
+                placeholder="Aarav Sharma"
                 className={`w-full bg-glass-bg/50 border ${
                   errors.name ? 'border-red-500/50 focus:border-red-500' : 'border-glass-border focus:border-electric-violet'
                 } rounded-xl px-4 py-3.5 text-sm text-foreground outline-none transition-all`}
@@ -132,7 +132,7 @@ export default function ContactForm() {
                 id="email"
                 type="email"
                 {...register('email')}
-                placeholder="john@example.com"
+                placeholder="aarav@example.com"
                 className={`w-full bg-glass-bg/50 border ${
                   errors.email ? 'border-red-500/50 focus:border-red-500' : 'border-glass-border focus:border-electric-violet'
                 } rounded-xl px-4 py-3.5 text-sm text-foreground outline-none transition-all`}
@@ -153,7 +153,7 @@ export default function ContactForm() {
                 id="phone"
                 type="tel"
                 {...register('phone')}
-                placeholder="+1 (555) 000-0000"
+                placeholder="+91 98765 43210"
                 className="w-full bg-glass-bg/50 border border-glass-border focus:border-electric-violet rounded-xl px-4 py-3.5 text-sm text-foreground outline-none transition-all"
               />
             </div>
