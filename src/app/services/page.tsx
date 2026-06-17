@@ -2,15 +2,16 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Monitor, ShoppingCart, Search, Zap, MousePointerClick, Check } from 'lucide-react';
+import { Monitor, Search, Zap, MousePointerClick, Bot, Database, Check } from 'lucide-react';
 import { servicesData } from '@/lib/data';
 
 const iconMap: { [key: string]: React.ComponentType<{ size: number; className?: string }> } = {
   web: Monitor,
-  shopping_cart: ShoppingCart,
   search: Search,
   speed: Zap,
   ads_click: MousePointerClick,
+  bot: Bot,
+  database: Database,
 };
 
 const serviceDeliverables: { [key: string]: string[] } = {
@@ -20,11 +21,11 @@ const serviceDeliverables: { [key: string]: string[] } = {
     'Interactive Animations',
     'Custom Web Components',
   ],
-  ecommerce: [
-    'Shopping Cart Optimization',
-    'Payment Gateway Setup',
-    'Inventory Management Sync',
-    'Conversion Funnel Audits',
+  'ai-chatbots': [
+    'Custom NLP Bot Development',
+    '24/7 Automated Lead Capture',
+    'Interactive Support Flow Routing',
+    'Seamless CRM & API Syncing',
   ],
   seo: [
     'On-Page Schema Formatting',
@@ -43,6 +44,12 @@ const serviceDeliverables: { [key: string]: string[] } = {
     'A/B Testing Integrations',
     'Analytics Monitoring Tools',
     'Lead Hook Automations',
+  ],
+  'backend-db': [
+    'Robust API Development (REST/GraphQL)',
+    'Database Architecture & Scalability',
+    'Secure User Authentication Protocols',
+    'Real-time Data Sync Solutions',
   ],
 };
 

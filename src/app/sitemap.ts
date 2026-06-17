@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://zokle.agency';
+  const baseUrl = 'https://zockle.co';
   const routes = ['', '/services', '/work', '/about', '/pricing', '/contact'];
 
   return routes.map((route) => ({

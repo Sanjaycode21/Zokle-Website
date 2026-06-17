@@ -35,11 +35,11 @@ export default function Home() {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Zokle Agency",
-    "url": "https://zokle.agency",
-    "logo": "https://zokle.agency/images/logo.png",
-    "image": "https://zokle.agency/images/cover.jpg",
-    "description": "Premium web design and development agency specializing in Next.js, custom e-commerce stores, and high-performance SEO results.",
+    "name": "Zockle Agency",
+    "url": "https://zockle.co",
+    "logo": "https://zockle.co/images/logo.png",
+    "image": "https://zockle.co/images/cover.jpg",
+    "description": "Premium web design and development agency specializing in Next.js, custom AI chatbot integration, and high-performance SEO results.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Chennai",
@@ -47,7 +47,7 @@ export default function Home() {
       "postalCode": "600001",
       "addressCountry": "IN"
     },
-    "telephone": "+91-8807892068",
+    "telephone": "+91-8807892068, +91-8019537177",
     "priceRange": "₹",
     "openingHoursSpecification": [
       {
@@ -58,9 +58,9 @@ export default function Home() {
       }
     ],
     "sameAs": [
-      "https://instagram.com/zokle.agency",
-      "https://linkedin.com/company/zokle",
-      "https://twitter.com/zokle"
+      "https://instagram.com/zockle.co",
+      "https://linkedin.com/company/zockle",
+      "https://twitter.com/zockle"
     ]
   };
 
