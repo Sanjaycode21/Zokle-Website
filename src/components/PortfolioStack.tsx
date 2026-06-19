@@ -43,11 +43,11 @@ export default function PortfolioStack() {
 
   return (
     <section
-      className="max-w-7xl mx-auto px-6 md:px-12 mb-20 md:mb-32 overflow-hidden"
+      className="max-w-7xl mx-auto px-6 md:px-12 pb-4 mb-20 md:mb-32 overflow-hidden"
       id="portfolio"
     >
       {/* Title & Controls */}
-      <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-16">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12 md:mb-16">
         <div>
           <span className="text-electric-violet font-display text-xs font-bold uppercase tracking-wider block mb-3">
             Selected Work
@@ -58,7 +58,7 @@ export default function PortfolioStack() {
         </div>
         
         {/* Navigation Buttons */}
-        <div className="flex gap-4 mt-6 md:mt-0">
+        <div className="flex gap-4 mt-6 md:mt-0 flex-shrink-0">
           <button
             onClick={() => rotateStack('prev')}
             aria-label="Previous Project"

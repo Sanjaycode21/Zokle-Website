@@ -24,7 +24,7 @@ export default function Footer() {
         {/* Brand & Description */}
         <div className="md:col-span-4 flex flex-col justify-start">
           <Link href="/" className="font-display text-2xl font-bold tracking-tight text-foreground mb-6">
-            Zokle<span className="text-electric-violet">.</span>
+            Zockle<span className="text-electric-violet">.</span>
           </Link>
           <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-sm">
             We design and build high-performance websites that help local businesses grow online.
@@ -69,7 +69,7 @@ export default function Footer() {
           <ul className="space-y-4 text-sm text-muted-foreground">
             <li><Link href="/services" className="hover:text-electric-violet transition-colors">Web Design</Link></li>
             <li><Link href="/services" className="hover:text-electric-violet transition-colors">Development</Link></li>
-            <li><Link href="/services" className="hover:text-electric-violet transition-colors">E-commerce</Link></li>
+            <li><Link href="/services" className="hover:text-electric-violet transition-colors">AI & Chatbots</Link></li>
             <li><Link href="/services" className="hover:text-electric-violet transition-colors">SEO & Speed</Link></li>
           </ul>
         </div>
@@ -117,7 +117,7 @@ export default function Footer() {
       {/* Bottom Legal & Copyright Bar */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 border-t border-glass-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
         <div>
-          © {new Date().getFullYear()} Zokle Agency. All rights reserved.
+          © {new Date().getFullYear()} Zockle Agency. All rights reserved.
         </div>
         <div className="flex gap-6">
           <Link href="#" className="hover:text-electric-violet transition-colors">Privacy Policy</Link>

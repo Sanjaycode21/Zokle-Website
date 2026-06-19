@@ -60,7 +60,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-background/80 backdrop-blur-md py-4 border-b border-glass-border shadow-lg shadow-black/5'
+          ? 'bg-background/95 backdrop-blur-md py-4 border-b border-glass-border shadow-lg shadow-black/5'
           : 'bg-transparent py-6 border-b border-transparent'
       }`}
     >
@@ -68,7 +68,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <span className="font-display text-2xl font-bold tracking-tight text-foreground transition-all duration-300">
-            Zokle<span className="text-electric-violet">.</span>
+            Zockle<span className="text-electric-violet">.</span>
           </span>
         </Link>
 

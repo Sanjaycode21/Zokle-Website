@@ -53,10 +53,10 @@ export const servicesData: ServiceItem[] = [
     gridSpan: 'md:col-span-8',
   },
   {
-    id: 'ecommerce',
-    title: 'E-commerce Solutions',
-    iconName: 'shopping_cart',
-    description: 'Scalable, custom-engineered digital storefronts with checkout optimizations, robust payment gateways, and backend tool integrations.',
+    id: 'ai-chatbots',
+    title: 'AI Chatbot Integration',
+    iconName: 'bot',
+    description: 'Smart, automated conversational agents designed to capture leads, handle customer support, and boost user engagement 24/7.',
     gridSpan: 'md:col-span-4',
   },
   {
@@ -79,6 +79,13 @@ export const servicesData: ServiceItem[] = [
     iconName: 'ads_click',
     description: 'Tailored landing page experiences, split testing, and analytical monitoring setups that turn simple page impressions into qualified pipelines.',
     gridSpan: 'md:col-span-4',
+  },
+  {
+    id: 'backend-db',
+    title: 'Backend & Database Solutions',
+    iconName: 'database',
+    description: 'Robust server architecture, secure API development, and reliable database synchronization schemas engineered for flawless performance.',
+    gridSpan: 'md:col-span-12',
   },
 ];
 
