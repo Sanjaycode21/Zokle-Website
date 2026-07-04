@@ -68,6 +68,11 @@ export default function WorkPage() {
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as const }}
               className="glass-card rounded-2xl md:rounded-3xl overflow-hidden group cursor-pointer shadow-xl flex flex-col h-[380px] sm:h-[450px]"
+              onClick={() => {
+                if (project.url && project.url !== '#') {
+                  window.open(project.url, '_blank', 'noopener,noreferrer');
+                }
+              }}
             >
               {/* Image Container */}
               <div className="relative w-full h-[65%] overflow-hidden">

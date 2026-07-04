@@ -12,6 +12,7 @@ export interface ProjectItem {
   category: string;
   imageSrc: string;
   dataAlt: string;
+  url?: string;
 }
 
 export interface RoadmapStep {
@@ -91,11 +92,12 @@ export const servicesData: ServiceItem[] = [
 
 export const portfolioData: ProjectItem[] = [
   {
-    id: 'pulsefit',
-    title: 'PulseFit Gym',
+    id: 'ironforge',
+    title: 'IronForge Fitness',
     category: 'Gym & Fitness Website',
-    imageSrc: '/projects/pulsefit.png',
-    dataAlt: 'A bold, high-energy website for a fitness studio featuring class schedules, trainer profiles, and an online membership signup flow.',
+    imageSrc: '/projects/ironforge.png',
+    dataAlt: 'A premium strength and conditioning gym website featuring membership pricing, trainer profiles, class scheduling, and member dashboards.',
+    url: 'https://gym-website-lake-eight.vercel.app/',
   },
   {
     id: 'lumiere',
@@ -103,6 +105,7 @@ export const portfolioData: ProjectItem[] = [
     category: 'Salon & Beauty Website',
     imageSrc: '/projects/lumiere.png',
     dataAlt: 'An elegant, conversion-focused booking site for a beauty salon with service menus, gallery showcase, and integrated appointment scheduling.',
+    url: '#',
   },
   {
     id: 'copper-plate',
@@ -110,6 +113,7 @@ export const portfolioData: ProjectItem[] = [
     category: 'Restaurant Website',
     imageSrc: '/projects/copperplate.png',
     dataAlt: 'A warm, visually rich restaurant website with digital menu, online table reservations, and location/hours info designed to drive foot traffic.',
+    url: '#',
   },
 ];
 

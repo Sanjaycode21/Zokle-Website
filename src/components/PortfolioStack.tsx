@@ -124,6 +124,8 @@ export default function PortfolioStack() {
                   // Click a background card to bring it forward
                   if (orderIndex === 1) rotateStack('next');
                   else rotateStack('prev');
+                } else if (project.url && project.url !== '#') {
+                  window.open(project.url, '_blank', 'noopener,noreferrer');
                 }
               }}
             >
