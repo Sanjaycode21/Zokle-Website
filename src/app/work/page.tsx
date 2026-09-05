@@ -59,66 +59,66 @@ export default function WorkPage() {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full"
       >
         <AnimatePresence mode="popLayout">
-          {filteredProjects.map((project) => (
-            <motion.div
-              key={project.id}
-              layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as const }}
-              className="glass-card rounded-2xl md:rounded-3xl overflow-hidden group cursor-pointer shadow-xl flex flex-col h-[380px] sm:h-[450px]"
-              onClick={() => {
-                if (project.url && project.url !== '#') {
-                  window.open(project.url, '_blank', 'noopener,noreferrer');
-                }
-              }}
-            >
-              {/* Image Container */}
-              <div className="relative w-full h-[60%] overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={project.imageSrc}
-                  alt={project.dataAlt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-white text-electric-violet flex items-center justify-center shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <ArrowUpRight size={20} />
+          {filteredProjects.map((project) => {
+            const hasLink = project.url && project.url !== '#';
+            const CardComponent = hasLink ? 'a' : 'div';
+            return (
+              <motion.div
+                key={project.id}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as const }}
+                className="w-full"
+              >
+                <CardComponent
+                  {...(hasLink ? { href: project.url, target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  className="glass-card rounded-2xl md:rounded-3xl overflow-hidden group cursor-pointer shadow-xl flex flex-col h-[380px] sm:h-[450px] w-full text-left block"
+                >
+                  {/* Image Container */}
+                  <div className="relative w-full h-[60%] overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={project.imageSrc}
+                      alt={project.dataAlt}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-full bg-white text-electric-violet flex items-center justify-center shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <ArrowUpRight size={20} />
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
 
-              {/* Info Container */}
-              <div className="p-6 md:p-8 flex flex-col justify-between flex-grow bg-background/40">
-                <div>
-                  <span className="text-electric-violet font-display text-[10px] md:text-xs font-bold tracking-wider uppercase block mb-1">
-                    {project.category}
-                  </span>
-                  <h3 className="font-display text-lg md:text-xl font-bold text-foreground leading-tight group-hover:text-electric-violet transition-colors">
-                    {project.title}
-                  </h3>
-                </div>
-                <div className="flex justify-between items-end mt-3 pt-2 border-t border-glass-border/50">
-                  <div className="text-xs text-muted-foreground leading-relaxed line-clamp-2 pr-2">
-                    {project.dataAlt}
+                  {/* Info Container */}
+                  <div className="p-6 md:p-8 flex flex-col justify-between flex-grow bg-background/40">
+                    <div>
+                      <span className="text-electric-violet font-display text-[10px] md:text-xs font-bold tracking-wider uppercase block mb-1">
+                        {project.category}
+                      </span>
+                      <h3 className="font-display text-lg md:text-xl font-bold text-foreground leading-tight group-hover:text-electric-violet transition-colors">
+                        {project.title}
+                      </h3>
+                    </div>
+                    <div className="flex justify-between items-end mt-3 pt-2 border-t border-glass-border/50">
+                      <div className="text-xs text-muted-foreground leading-relaxed line-clamp-2 pr-2">
+                        {project.dataAlt}
+                      </div>
+                      {hasLink && (
+                        <div
+                          className="inline-flex items-center gap-1.5 bg-electric-violet/10 group-hover:bg-electric-violet text-electric-violet group-hover:text-white px-3 py-1.5 rounded-full text-xs font-display font-bold transition-all duration-300 flex-shrink-0"
+                        >
+                          <span>Live Site</span>
+                          <ExternalLink size={13} />
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  {project.url && project.url !== '#' && (
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-1.5 bg-electric-violet/10 hover:bg-electric-violet text-electric-violet hover:text-white px-3 py-1.5 rounded-full text-xs font-display font-bold transition-all duration-300 flex-shrink-0"
-                    >
-                      <span>Live Site</span>
-                      <ExternalLink size={13} />
-                    </a>
-                  )}
-                </div>
-              </div>
-            </motion.div>
-          ))}
+                </CardComponent>
+              </motion.div>
+            );
+          })}
         </AnimatePresence>
       </motion.div>
     </div>
