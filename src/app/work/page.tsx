@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ExternalLink } from 'lucide-react';
 import { portfolioData } from '@/lib/data';
 
 export default function WorkPage() {
@@ -75,7 +75,7 @@ export default function WorkPage() {
               }}
             >
               {/* Image Container */}
-              <div className="relative w-full h-[65%] overflow-hidden">
+              <div className="relative w-full h-[60%] overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={project.imageSrc}
@@ -99,8 +99,22 @@ export default function WorkPage() {
                     {project.title}
                   </h3>
                 </div>
-                <div className="text-xs text-muted-foreground mt-4 leading-relaxed line-clamp-2">
-                  {project.dataAlt}
+                <div className="flex justify-between items-end mt-3 pt-2 border-t border-glass-border/50">
+                  <div className="text-xs text-muted-foreground leading-relaxed line-clamp-2 pr-2">
+                    {project.dataAlt}
+                  </div>
+                  {project.url && project.url !== '#' && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1.5 bg-electric-violet/10 hover:bg-electric-violet text-electric-violet hover:text-white px-3 py-1.5 rounded-full text-xs font-display font-bold transition-all duration-300 flex-shrink-0"
+                    >
+                      <span>Live Site</span>
+                      <ExternalLink size={13} />
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>

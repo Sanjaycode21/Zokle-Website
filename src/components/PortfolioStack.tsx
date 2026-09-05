@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react';
 import { portfolioData } from '@/lib/data';
 
 export default function PortfolioStack() {
@@ -138,13 +138,25 @@ export default function PortfolioStack() {
               />
               
               {/* Gradient & Text Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-6 md:p-12 flex flex-col justify-end">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 md:p-12 flex flex-col justify-end items-start">
                 <span className="text-electric-violet font-display text-xs md:text-sm font-bold tracking-wider mb-2">
                   {project.category}
                 </span>
-                <h3 className="font-display text-2xl md:text-4xl font-extrabold text-white mb-2 leading-none">
+                <h3 className="font-display text-2xl md:text-4xl font-extrabold text-white mb-3 leading-none">
                   {project.title}
                 </h3>
+                {project.url && project.url !== '#' && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-2 bg-electric-violet hover:bg-electric-violet/90 text-white font-display text-xs md:text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-300 shadow-lg shadow-electric-violet/25 hover:scale-105 mt-2"
+                  >
+                    <span>Visit Live Site</span>
+                    <ExternalLink size={16} />
+                  </a>
+                )}
               </div>
             </div>
           );
