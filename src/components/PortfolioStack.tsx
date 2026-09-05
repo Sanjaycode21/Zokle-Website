@@ -92,101 +92,58 @@ export default function PortfolioStack() {
           // Determine fanning variables based on orderIndex
           let transform = '';
           let opacity = 1;
-          let pointerEvents: 'auto' | 'none' = 'auto';
 
           if (orderIndex === 0) {
             transform = 'translate3d(0px, 0px, 0px) rotateX(0deg) scale(1)';
             opacity = 1;
-            pointerEvents = 'auto';
           } else if (orderIndex === 1) {
             transform = 'translate3d(0px, -40px, -100px) rotateX(5deg) scale(0.95)';
             opacity = 0.85;
-            pointerEvents = 'none';
           } else {
             transform = 'translate3d(0px, -80px, -200px) rotateX(10deg) scale(0.9)';
             opacity = 0.55;
-            pointerEvents = 'none';
           }
 
+          const hasLink = project.url && project.url !== '#';
+          const CardElement = hasLink ? 'a' : 'div';
+
           return (
-            <React.Fragment key={project.id}>
-              {orderIndex === 0 && project.url && project.url !== '#' ? (
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="portfolio-stack-item absolute inset-0 w-full rounded-2xl md:rounded-3xl overflow-hidden glass-card cursor-pointer group shadow-2xl block"
-                  style={{
-                    zIndex,
-                    transform,
-                    opacity,
-                    pointerEvents,
-                    transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-                  }}
-                >
-                  {/* Image */}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={project.imageSrc}
-                    alt={project.dataAlt}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  
-                  {/* Gradient & Text Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 md:p-12 flex flex-col justify-end items-start">
-                    <span className="text-electric-violet font-display text-xs md:text-sm font-bold tracking-wider mb-2">
-                      {project.category}
-                    </span>
-                    <h3 className="font-display text-2xl md:text-4xl font-extrabold text-white mb-3 leading-none">
-                      {project.title}
-                    </h3>
-                    <div className="inline-flex items-center gap-2 bg-electric-violet hover:bg-electric-violet/90 text-white font-display text-xs md:text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-300 shadow-lg shadow-electric-violet/25 group-hover:scale-105 mt-2">
-                      <span>Visit Live Site</span>
-                      <ExternalLink size={16} />
-                    </div>
+            <CardElement
+              key={project.id}
+              {...(hasLink ? { href: project.url, target: '_blank', rel: 'noopener noreferrer' } : {})}
+              className="portfolio-stack-item absolute inset-0 w-full rounded-2xl md:rounded-3xl overflow-hidden glass-card cursor-pointer group shadow-2xl block"
+              style={{
+                zIndex,
+                transform,
+                opacity,
+                pointerEvents: 'auto',
+                transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+              }}
+            >
+              {/* Image */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={project.imageSrc}
+                alt={project.dataAlt}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              
+              {/* Gradient & Text Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 md:p-12 flex flex-col justify-end items-start">
+                <span className="text-electric-violet font-display text-xs md:text-sm font-bold tracking-wider mb-2">
+                  {project.category}
+                </span>
+                <h3 className="font-display text-2xl md:text-4xl font-extrabold text-white mb-3 leading-none">
+                  {project.title}
+                </h3>
+                {hasLink && (
+                  <div className="inline-flex items-center gap-2 bg-electric-violet group-hover:bg-electric-violet/90 text-white font-display text-xs md:text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-300 shadow-lg shadow-electric-violet/25 group-hover:scale-105 mt-2">
+                    <span>Visit Live Site</span>
+                    <ExternalLink size={16} />
                   </div>
-                </a>
-              ) : (
-                <div
-                  className="portfolio-stack-item absolute inset-0 w-full rounded-2xl md:rounded-3xl overflow-hidden glass-card cursor-pointer group shadow-2xl"
-                  style={{
-                    zIndex,
-                    transform,
-                    opacity,
-                    pointerEvents,
-                    transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-                  }}
-                  onClick={() => {
-                    if (orderIndex === 1) rotateStack('next');
-                    else rotateStack('prev');
-                  }}
-                >
-                  {/* Image */}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={project.imageSrc}
-                    alt={project.dataAlt}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  
-                  {/* Gradient & Text Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 md:p-12 flex flex-col justify-end items-start">
-                    <span className="text-electric-violet font-display text-xs md:text-sm font-bold tracking-wider mb-2">
-                      {project.category}
-                    </span>
-                    <h3 className="font-display text-2xl md:text-4xl font-extrabold text-white mb-3 leading-none">
-                      {project.title}
-                    </h3>
-                    {project.url && project.url !== '#' && (
-                      <div className="inline-flex items-center gap-2 bg-electric-violet/80 text-white font-display text-xs md:text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-300 shadow-lg mt-2">
-                        <span>Visit Live Site</span>
-                        <ExternalLink size={16} />
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )}
-            </React.Fragment>
+                )}
+              </div>
+            </CardElement>
           );
         })}
       </div>
