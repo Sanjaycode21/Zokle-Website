@@ -39,8 +39,8 @@ export default function ContactPage() {
               </div>
               <div>
                 <h4 className="text-xs font-bold font-display uppercase tracking-wider text-foreground mb-1">Email</h4>
-                <a href="mailto:hello@zokle.agency" className="text-sm text-muted-foreground hover:text-electric-violet transition-colors">
-                  hello@zokle.agency
+                <a href="mailto:zokle.co@gmail.com" className="text-sm text-muted-foreground hover:text-electric-violet transition-colors">
+                  zokle.co@gmail.com
                 </a>
               </div>
             </div>
@@ -50,10 +50,13 @@ export default function ContactPage() {
               <div className="w-10 h-10 rounded-xl bg-electric-violet/10 border border-electric-violet/20 flex items-center justify-center text-electric-violet flex-shrink-0">
                 <Phone size={18} />
               </div>
-              <div>
+              <div className="flex flex-col">
                 <h4 className="text-xs font-bold font-display uppercase tracking-wider text-foreground mb-1">Phone</h4>
-                <a href="tel:+15551234567" className="text-sm text-muted-foreground hover:text-electric-violet transition-colors">
-                  +1 (555) 123-4567
+                <a href="tel:+918807892068" className="text-sm text-muted-foreground hover:text-electric-violet transition-colors">
+                  +91 8807892068
+                </a>
+                <a href="tel:+918019537177" className="text-sm text-muted-foreground hover:text-electric-violet transition-colors mt-1">
+                  +91 8019537177
                 </a>
               </div>
             </div>
@@ -66,7 +69,7 @@ export default function ContactPage() {
               <div>
                 <h4 className="text-xs font-bold font-display uppercase tracking-wider text-foreground mb-1">Location</h4>
                 <p className="text-sm text-muted-foreground">
-                  San Francisco, CA
+                  Chennai, India
                 </p>
               </div>
             </div>

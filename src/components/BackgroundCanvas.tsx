@@ -9,7 +9,13 @@ export default function BackgroundCanvas() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    let gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl') as WebGLRenderingContext | null;
+    let gl: WebGLRenderingContext | null = null;
+    try {
+      gl = (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')) as WebGLRenderingContext | null;
+    } catch (e) {
+      console.warn('WebGL context acquisition failed:', e);
+      return;
+    }
     if (!gl) return;
 
     const vs = `
@@ -59,9 +65,10 @@ export default function BackgroundCanvas() {
           vec3 accentColor = vec3(139.0 / 255.0, 92.0 / 255.0, 246.0 / 255.0); // #8B5CF6
           
           // Radial glow following the cursor
-          float glowRadius = mix(0.4, 0.3, u_darkMode);
-          float glowIntensity = mix(0.1, 0.15, u_darkMode);
+          float glowRadius = mix(0.55, 0.45, u_darkMode);
+          float glowIntensity = mix(0.25, 0.35, u_darkMode);
           float glow = smoothstep(glowRadius, 0.0, dist);
+          glow = pow(glow, 1.6); // Smooth exponential falloff for perfect blending
           vec3 finalColor = mix(bgColor, accentColor, glow * glowIntensity);
           
           // Dot colors

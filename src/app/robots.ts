@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/api/',
     },
-    sitemap: 'https://zokle.agency/sitemap.xml',
+    sitemap: 'https://zokle.vercel.app/sitemap.xml',
   };
 }

@@ -2,16 +2,17 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Monitor, ShoppingCart, Search, Zap, MousePointerClick } from 'lucide-react';
+import { Monitor, Search, Zap, MousePointerClick, Bot, Database } from 'lucide-react';
 import { servicesData } from '@/lib/data';
 
 // Map string icon names to Lucide components
 const iconMap: { [key: string]: React.ComponentType<{ size: number; className?: string }> } = {
   web: Monitor,
-  shopping_cart: ShoppingCart,
   search: Search,
   speed: Zap,
   ads_click: MousePointerClick,
+  bot: Bot,
+  database: Database,
 };
 
 export default function ServiceBento() {

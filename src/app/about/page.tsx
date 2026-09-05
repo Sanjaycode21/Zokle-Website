@@ -30,19 +30,14 @@ export default function AboutPage() {
 
   const teamMembers = [
     {
-      name: 'Elena Rostova',
-      role: 'Principal UI/UX Designer',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200',
+      name: 'Sanjay R',
+      role: 'Co-Founder & Lead Developer',
+      image: '/images/sanjay.jpg',
     },
     {
-      name: 'Sanjay Patel',
-      role: 'Lead Full-Stack Engineer',
-      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=200&h=200',
-    },
-    {
-      name: 'Marcus Vance',
-      role: 'Creative Director',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200&h=200',
+      name: 'Rithwik',
+      role: 'Co-Founder & Lead Designer',
+      image: '/images/rithwik.png',
     },
   ];
 
@@ -96,9 +91,9 @@ export default function AboutPage() {
       {/* Team profiles */}
       <div>
         <h2 className="font-display text-2xl md:text-3xl font-extrabold text-foreground mb-12 text-center">
-          Meet the Specialists
+          Meet the Founders
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-2xl mx-auto">
           {teamMembers.map((member, index) => (
             <motion.div
               key={member.name}

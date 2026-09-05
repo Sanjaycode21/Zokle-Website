@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sun, Moon, Menu, X } from 'lucide-react';
+import ZockleLogo from './ZockleLogo';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,14 +61,17 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-background/80 backdrop-blur-md py-4 border-b border-glass-border shadow-lg shadow-black/5'
+          ? 'bg-background/95 backdrop-blur-md py-4 border-b border-glass-border shadow-lg shadow-black/5'
           : 'bg-transparent py-6 border-b border-transparent'
       }`}
     >
       <div className="flex justify-between items-center px-6 md:px-12 max-w-7xl mx-auto">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <span className="font-display text-2xl font-bold tracking-tight text-foreground transition-all duration-300">
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <div className="flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+            <ZockleLogo className="w-8.5 h-8.5 md:w-9 md:h-9 text-electric-violet" />
+          </div>
+          <span className="font-display text-2xl font-bold tracking-tight text-foreground transition-colors duration-300">
             Zokle<span className="text-electric-violet">.</span>
           </span>
         </Link>
