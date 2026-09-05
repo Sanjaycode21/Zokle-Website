@@ -38,9 +38,12 @@ export const metadata: Metadata = {
     description: "High-performance digital experiences designed to scale.",
   },
   icons: {
-    icon: "/images/icon-square.png",
-    shortcut: "/images/icon-square.png",
-    apple: "/images/icon-square.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png" }
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
   },
 };
 
