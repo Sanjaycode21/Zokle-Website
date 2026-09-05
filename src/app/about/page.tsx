@@ -46,13 +46,13 @@ export default function AboutPage() {
       {/* Header */}
       <div className="mb-16 text-center max-w-2xl mx-auto">
         <span className="text-electric-violet font-display text-xs font-bold uppercase tracking-wider block mb-3">
-          About Zockle
+          About Zokle
         </span>
         <h1 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight text-foreground mb-6">
           The Agency Behind the Pixels
         </h1>
         <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-          Zockle is a premium web design and development agency. We engineer responsive, visual-first platforms that turn visitors into loyal customers.
+          Zokle is a premium web design and development agency. We engineer responsive, visual-first platforms that turn visitors into loyal customers.
         </p>
       </div>
 

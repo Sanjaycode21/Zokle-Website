@@ -35,10 +35,10 @@ export default function Home() {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Zockle Agency",
-    "url": "https://zockle.co",
-    "logo": "https://zockle.co/images/logo.png",
-    "image": "https://zockle.co/images/cover.jpg",
+    "name": "Zokle Agency",
+    "url": "https://zokle.co",
+    "logo": "https://zokle.co/images/logo.png",
+    "image": "https://zokle.co/images/cover.jpg",
     "description": "Premium web design and development agency specializing in Next.js, custom AI chatbot integration, and high-performance SEO results.",
     "address": {
       "@type": "PostalAddress",
@@ -58,9 +58,9 @@ export default function Home() {
       }
     ],
     "sameAs": [
-      "https://instagram.com/zockle.co",
-      "https://linkedin.com/company/zockle",
-      "https://twitter.com/zockle"
+      "https://instagram.com/zokle.co",
+      "https://linkedin.com/company/zokle",
+      "https://twitter.com/zokle"
     ]
   };
 

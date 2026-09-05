@@ -18,7 +18,7 @@ export default function CTASection() {
             Ready to Grow Your Business Online?
           </h2>
           <p className="text-sm md:text-lg text-muted-foreground mb-10 max-w-xl mx-auto leading-relaxed">
-            Let&apos;s build a website that works as hard as you do. Get a free consultation and see how Zockle can help your business stand out.
+            Let&apos;s build a website that works as hard as you do. Get a free consultation and see how Zokle can help your business stand out.
           </p>
           <Link
             href="/contact"

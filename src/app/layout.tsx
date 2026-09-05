@@ -20,24 +20,26 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Zockle | Premium Web Design & Development Agency Chennai",
-  description: "High-performance digital experiences that convert visitors into loyal customers. Zockle is a premium design and development agency specializing in Next.js web apps, custom AI chatbot integration, and top SEO optimization rankings.",
+  title: "Zokle | Premium Web Design & Development Agency Chennai",
+  description: "High-performance digital experiences that convert visitors into loyal customers. Zokle is a premium design and development agency specializing in Next.js web apps, custom AI chatbot integration, and top SEO optimization rankings.",
   keywords: ["Web Design Agency", "Next.js Web Developers", "Web Development Agency Chennai", "Custom AI Chatbots", "Local Business Websites", "SaaS Startup Landing Pages", "SEO Performance Optimization", "Framer Motion Interactive Design"],
   openGraph: {
-    title: "Zockle | Premium Web Design & Development Agency",
+    title: "Zokle | Premium Web Design & Development Agency",
     description: "High-performance, visual-first digital experiences engineered to turn visitors into paying customers.",
-    url: "https://zockle.co",
-    siteName: "Zockle Agency",
+    url: "https://zokle.co",
+    siteName: "Zokle Agency",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zockle | Premium Web Design & Development Agency",
+    title: "Zokle | Premium Web Design & Development Agency",
     description: "High-performance digital experiences designed to scale.",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/images/icon-square.png",
+    shortcut: "/images/icon-square.png",
+    apple: "/images/icon-square.png",
   },
 };
 

@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import ZockleLogo from './ZockleLogo';
+
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -23,8 +25,11 @@ export default function Footer() {
         
         {/* Brand & Description */}
         <div className="md:col-span-4 flex flex-col justify-start">
-          <Link href="/" className="font-display text-2xl font-bold tracking-tight text-foreground mb-6">
-            Zockle<span className="text-electric-violet">.</span>
+          <Link href="/" className="flex items-center gap-2.5 font-display text-2xl font-bold tracking-tight text-foreground mb-6 group">
+            <div className="flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+              <ZockleLogo className="w-8.5 h-8.5 md:w-9 md:h-9 text-electric-violet" />
+            </div>
+            <span>Zokle<span className="text-electric-violet">.</span></span>
           </Link>
           <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-sm">
             We design and build high-performance websites that help local businesses grow online.
@@ -117,7 +122,7 @@ export default function Footer() {
       {/* Bottom Legal & Copyright Bar */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 border-t border-glass-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
         <div>
-          © {new Date().getFullYear()} Zockle Agency. All rights reserved.
+          © {new Date().getFullYear()} Zokle Agency. All rights reserved.
         </div>
         <div className="flex gap-6">
           <Link href="#" className="hover:text-electric-violet transition-colors">Privacy Policy</Link>

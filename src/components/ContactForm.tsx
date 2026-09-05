@@ -130,7 +130,7 @@ export default function ContactForm() {
           <CheckCircle2 size={56} className="text-emerald-500 mb-6 animate-bounce" />
           <h3 className="font-display text-2xl font-bold text-foreground mb-3">Inquiry Sent Successfully!</h3>
           <p className="text-muted-foreground text-sm max-w-sm leading-relaxed mb-8">
-            Thank you for reaching out to Zockle. We will review your request and get back to you within 24 hours.
+            Thank you for reaching out to Zokle. We will review your request and get back to you within 24 hours.
           </p>
           <button
             onClick={() => setSubmitStatus('idle')}

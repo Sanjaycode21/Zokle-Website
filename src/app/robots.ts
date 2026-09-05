@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/api/',
     },
-    sitemap: 'https://zockle.co/sitemap.xml',
+    sitemap: 'https://zokle.co/sitemap.xml',
   };
 }

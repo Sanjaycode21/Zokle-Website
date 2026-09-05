@@ -11,7 +11,7 @@ export default function WorkPage() {
   const filterTabs = [
     { id: 'all', label: 'All Projects' },
     { id: 'gym', label: 'Gym & Fitness', category: 'Gym & Fitness Website' },
-    { id: 'salon', label: 'Salon & Beauty', category: 'Salon & Beauty Website' },
+    { id: 'textiles', label: 'Manufacturing', category: 'Textile & B2B Manufacturing' },
     { id: 'restaurant', label: 'Restaurant', category: 'Restaurant Website' },
   ];
 

@@ -100,12 +100,12 @@ export const portfolioData: ProjectItem[] = [
     url: 'https://gym-website-lake-eight.vercel.app/',
   },
   {
-    id: 'lumiere',
-    title: 'Lumière Salon',
-    category: 'Salon & Beauty Website',
-    imageSrc: '/projects/lumiere.png',
-    dataAlt: 'An elegant, conversion-focused booking site for a beauty salon with service menus, gallery showcase, and integrated appointment scheduling.',
-    url: '#',
+    id: 'gkb-textiles',
+    title: 'GKB Textiles',
+    category: 'Textile & B2B Manufacturing',
+    imageSrc: '/projects/gkbtextiles.png',
+    dataAlt: 'A modern B2B manufacturing website for GKB Textiles showcasing premium cotton grey fabrics, air jet loom technology, sustainability, and export solutions.',
+    url: 'https://gkbtextiles.vercel.app/',
   },
   {
     id: 'copper-plate',

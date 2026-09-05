@@ -39,8 +39,8 @@ export default function ContactPage() {
               </div>
               <div>
                 <h4 className="text-xs font-bold font-display uppercase tracking-wider text-foreground mb-1">Email</h4>
-                <a href="mailto:zockle.co@gmail.com" className="text-sm text-muted-foreground hover:text-electric-violet transition-colors">
-                  zockle.co@gmail.com
+                <a href="mailto:zokle.co@gmail.com" className="text-sm text-muted-foreground hover:text-electric-violet transition-colors">
+                  zokle.co@gmail.com
                 </a>
               </div>
             </div>
