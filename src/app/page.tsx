@@ -36,9 +36,9 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Zokle Agency",
-    "url": "https://zokle.co",
-    "logo": "https://zokle.co/images/logo.png",
-    "image": "https://zokle.co/images/cover.jpg",
+    "url": "https://zokle.vercel.app",
+    "logo": "https://zokle.vercel.app/images/logo.png",
+    "image": "https://zokle.vercel.app/images/cover.jpg",
     "description": "Premium web design and development agency specializing in Next.js, custom AI chatbot integration, and high-performance SEO results.",
     "address": {
       "@type": "PostalAddress",
